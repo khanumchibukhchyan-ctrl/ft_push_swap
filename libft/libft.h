@@ -6,7 +6,7 @@
 /*   By: kchibukh <kchibukh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/27 16:46:05 by kchibukh          #+#    #+#             */
-/*   Updated: 2026/03/09 16:34:00 by kchibukh         ###   ########.fr       */
+/*   Updated: 2026/03/09 18:30:07 by kchibukh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,4 +72,3 @@ t_list	*ft_lstnew(void *content);
 t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *));
 
 #endif
- 
