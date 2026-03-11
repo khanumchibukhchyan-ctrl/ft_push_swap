@@ -6,8 +6,12 @@
 /*   By: kchibukh <kchibukh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/11 13:43:15 by kchibukh          #+#    #+#             */
-/*   Updated: 2026/03/11 13:43:51 by kchibukh         ###   ########.fr       */
+/*   Updated: 2026/03/11 16:45:37 by kchibukh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include ""
+#include "push_swap.h"
+
+void	selection_sort(int *arr, int size)
+{
+}
