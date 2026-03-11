@@ -1,34 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.h                                        :+:      :+:    :+:   */
+/*   sort_stack.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kchibukh <kchibukh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/03/09 16:34:27 by kchibukh          #+#    #+#             */
-/*   Updated: 2026/03/09 20:04:47 by kchibukh         ###   ########.fr       */
+/*   Created: 2026/03/09 17:28:08 by kchibukh          #+#    #+#             */
+/*   Updated: 2026/03/09 20:08:13 by kchibukh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PUSH_SWAP_H
-# define PUSH_SWAP_H
+#include "push_swap.h"
 
-typedef struct s_stack
+sort_stack(stack_a, stack_b, strategy)
 {
-	int				value;
-	struct s_struct	*next;
-}	t_stack;
-
-typedef enum e_strategy
-{
-	ADAPTIVE,
-	SIMPLE,
-	MEDIUM,
-	COMPLEX,
-}	t_strategy;
-
-void	parse_args(int argc, char **argv);
-void	sort_stack(t_stack *a, t_stack *b, t_strategy stategy);
-void	init_stack(t_stack **a, t_stack **b, int argc, char **argv);
-
-#endif
+}
