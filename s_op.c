@@ -6,42 +6,14 @@
 /*   By: kchibukh <kchibukh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/11 16:50:29 by kchibukh          #+#    #+#             */
-/*   Updated: 2026/03/11 17:35:51 by kchibukh         ###   ########.fr       */
+/*   Updated: 2026/03/11 20:26:35 by kchibukh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	sa(t_stack **a)
+void	swap(t_stack **stack, char *msg)
 {
-	t_stack	*first;
-	t_stack	*second;
-
-	if (!a || !*a || !(*a)->next)
-		return ;
-	first = *a;
-	second = (*a)->next;
-	first->next = second->next;
-	second->next = first;
-	*a = second;
-}
-
-void	sb(t_stack **b)
-{
-	t_stack	*first;
-	t_stack	*second;
-
-	if (!b || !*b || !(*b)->next)
-		return ;
-	first = *b;
-	second = (*b)->next;
-	first->next = second->next;
-	second->next = first;
-	*b = second;
-}
-
-void	ss(t_stack **a, t_stack **b)
-{
-	sa(a);
-	sb(b);
+	if (msg)
+		ft_putstr(msg);
 }

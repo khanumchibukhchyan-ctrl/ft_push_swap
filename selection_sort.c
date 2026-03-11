@@ -1,17 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   sort_stack.c                                       :+:      :+:    :+:   */
+/*   selection_sort.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kchibukh <kchibukh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/03/09 17:28:08 by kchibukh          #+#    #+#             */
-/*   Updated: 2026/03/11 18:59:10 by kchibukh         ###   ########.fr       */
+/*   Created: 2026/03/11 13:43:15 by kchibukh          #+#    #+#             */
+/*   Updated: 2026/03/11 18:59:13 by kchibukh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-sort_stack(stack_a, stack_b, strategy)
+void	selection_sort(int *arr, int size)
 {
 }
