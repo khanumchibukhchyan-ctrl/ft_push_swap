@@ -6,7 +6,7 @@
 /*   By: kchibukh <kchibukh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/09 16:34:27 by kchibukh          #+#    #+#             */
-/*   Updated: 2026/03/09 20:04:47 by kchibukh         ###   ########.fr       */
+/*   Updated: 2026/03/11 16:49:04 by kchibukh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 typedef struct s_stack
 {
 	int				value;
-	struct s_struct	*next;
+	struct s_stact	*next;
 }	t_stack;
 
 typedef enum e_strategy
