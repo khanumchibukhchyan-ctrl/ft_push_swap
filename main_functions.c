@@ -1,24 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   main_functions.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kchibukh <kchibukh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/03/09 16:27:48 by kchibukh          #+#    #+#             */
-/*   Updated: 2026/03/13 20:50:08 by kchibukh         ###   ########.fr       */
+/*   Created: 2026/03/13 20:40:41 by kchibukh          #+#    #+#             */
+/*   Updated: 2026/03/13 21:23:46 by kchibukh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	main(int argc, char **argv)
+void	init_data(t_pushswap_data *data)
 {
-	t_pushswap_data	data;
+	data->a = NULL;
+	data->b = NULL;
+	data->strategy = ADAPTIVE;
+	data->is_benchmark = false;
+	data->disorder_metric = 0.0f;
+}
 
-	init_data(&data);
-	parse_data(&data);
-	sort_stack(&data);
+void	parse_data(t_pushswap_data data)
+{
 	
-	return (0);
 }

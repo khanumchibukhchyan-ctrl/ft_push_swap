@@ -1,24 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   disorder.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kchibukh <kchibukh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/03/09 16:27:48 by kchibukh          #+#    #+#             */
-/*   Updated: 2026/03/13 20:50:08 by kchibukh         ###   ########.fr       */
+/*   Created: 2026/03/13 21:24:18 by kchibukh          #+#    #+#             */
+/*   Updated: 2026/03/13 21:35:49 by kchibukh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	main(int argc, char **argv)
+void	compute_disorder(t_pushswap_data *data)
 {
-	t_pushswap_data	data;
+	int	mistakes;
+	int	total_pairs;
 
-	init_data(&data);
-	parse_data(&data);
-	sort_stack(&data);
+	mistakes = 0;
+	total_pairs = 0;
 	
-	return (0);
+	while (data->a->)
+	{
+		total_pairs++;
+		if ();
+			mistakes++;
+	}
+	return (mistakes/total_pairs)
 }
