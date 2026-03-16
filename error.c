@@ -1,38 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*   error.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kchibukh <kchibukh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/01/29 17:28:00 by kchibukh          #+#    #+#             */
-/*   Updated: 2026/03/15 21:22:58 by kchibukh         ###   ########.fr       */
+/*   Created: 2026/03/14 19:50:21 by kchibukh          #+#    #+#             */
+/*   Updated: 2026/03/16 15:46:31 by kchibukh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "push_swap.h"
 
-int	ft_atoi(const char *nptr)
+void	print_error(int error, char *msg)
 {
-	int	sign;
-	int	res;
-
-	sign = 1;
-	res = 0;
-	while (*nptr == ' ' || (*nptr >= 9 && *nptr <= 13))
-		nptr++;
-	if (*nptr == '-' || *nptr == '+')
-	{
-		if (*nptr == '-')
-			sign = -1;
-		nptr++;
-	}
-	while (*nptr >= '0' && *nptr <= '9')
-	{
-		res = res * 10 + (*nptr - '0');
-		nptr++;
-	}
-	if (*nptr != '\0')
-		print_error(1, "Is not number\n");
-	return (res * sign);
+	ft_putstr_fd("Error\n", 2);
+	if (msg)
+		ft_putstr_fd(msg, 1);
+	exit(error);
 }

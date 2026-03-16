@@ -1,38 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*   simple_algorithm.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kchibukh <kchibukh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/01/29 17:28:00 by kchibukh          #+#    #+#             */
-/*   Updated: 2026/03/15 21:22:58 by kchibukh         ###   ########.fr       */
+/*   Created: 2026/03/15 15:07:12 by kchibukh          #+#    #+#             */
+/*   Updated: 2026/03/15 15:45:08 by kchibukh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "push_swap.h"
 
-int	ft_atoi(const char *nptr)
+void	selection_sort()
 {
-	int	sign;
-	int	res;
-
-	sign = 1;
-	res = 0;
-	while (*nptr == ' ' || (*nptr >= 9 && *nptr <= 13))
-		nptr++;
-	if (*nptr == '-' || *nptr == '+')
-	{
-		if (*nptr == '-')
-			sign = -1;
-		nptr++;
-	}
-	while (*nptr >= '0' && *nptr <= '9')
-	{
-		res = res * 10 + (*nptr - '0');
-		nptr++;
-	}
-	if (*nptr != '\0')
-		print_error(1, "Is not number\n");
-	return (res * sign);
 }
