@@ -1,35 +1,60 @@
 NAME = push_swap
 
+# Compiler and flags
 CC = cc
+CFLAGS =# -Wall -Wextra -Werror
+INCLUDES = -I. -I./libft
 
-CFLAGS = -Wall -Wextra -Werror
+# Libft
+LIBFT_DIR = libft
+LIBFT = $(LIBFT_DIR)/libft.a
 
-LIB_DIR = libft
+# Source files
+SRCS = main.c \
+       main_functions.c \
+       error.c \
+       disorder.c \
+       parse_utils.c \
+       stack_opertations.c \
+       list_operations.c \
+       simple_algorithm.c \
+       medium_algorithm.c \
+       complex_algorithm.c \
+	   atol.c
 
-LIB = $(LIB_DIR)/libft.a
+# Object files
+OBJS = $(SRCS:.c=.o)
 
-SRC =
+# Colors for output
+GREEN = \033[0;32m
+RED = \033[0;31m
+RESET = \033[0m
 
-OBJ = $(SRC:.c=.o)
+# Rules
+all: $(NAME)
 
-all: $(LIB) $(NAME)
+$(LIBFT):
+	@echo "$(GREEN)Compiling libft...$(RESET)"
+	@make -C $(LIBFT_DIR)
 
-$(LIB):
-	$(MAKE) -C $(LIB_DIR)
+$(NAME): $(LIBFT) $(OBJS)
+	@echo "$(GREEN)Linking $(NAME)...$(RESET)"
+	@$(CC) $(CFLAGS) $(OBJS) $(LIBFT) -o $(NAME)
+	@echo "$(GREEN)✓ $(NAME) compiled successfully!$(RESET)"
 
-$(NAME): $(OBJ) $(LIB)
-	$(CC) $(CFLAGS) $(OBJ) -L$(LIB_DIR) -lft -o $(NAME)
+%.o: %.c push_swap.h
+	@echo "Compiling $<..."
+	@$(CC) $(CFLAGS) $(INCLUDES) -c $< -o $@
 
-%.o: %.c
-	$(CC) $(CFLAGS) -c $< -o $@
-	
 clean:
-	$(MAKE) -C $(LIB_DIR) clean
-	-rm -f $(OBJ)
+	@echo "$(RED)Cleaning object files...$(RESET)"
+	@rm -f $(OBJS)
+	@make -C $(LIBFT_DIR) clean
 
 fclean: clean
-	$(MAKE) -C $(LIB_DIR) fclean
-	-rm -f $(NAME)
+	@echo "$(RED)Removing $(NAME)...$(RESET)"
+	@rm -f $(NAME)
+	@make -C $(LIBFT_DIR) fclean
 
 re: fclean all
 

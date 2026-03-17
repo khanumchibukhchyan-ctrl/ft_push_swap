@@ -6,13 +6,13 @@
 /*   By: kchibukh <kchibukh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/13 18:45:51 by kchibukh          #+#    #+#             */
-/*   Updated: 2026/03/14 19:09:06 by kchibukh         ###   ########.fr       */
+/*   Updated: 2026/03/17 21:08:40 by kchibukh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-t_stack	*ft_lstnew(int value)
+t_stack	*lstnew(int value)
 {
 	t_stack	*new;
 
@@ -24,20 +24,19 @@ t_stack	*ft_lstnew(int value)
 	return (new);
 }
 
-void	ft_lstadd_back(t_stack **lst, t_stack *new)
+void	lstadd_back(t_stack **lst, t_stack *new)
 {
-	t_stack	*last;
+	t_stack	*lst_cpy;
 
 	if (!lst || !new)
 		return ;
-	if (*lst == NULL)
+	if (!*lst)
 	{
 		*lst = new;
 		return ;
 	}
-	else
-	{
-		last = ft_lstlast(*lst);
-		last->next = new;
-	}
+	lst_cpy = *lst;
+	while (lst_cpy->next)
+		lst_cpy = lst_cpy->next;
+	lst_cpy->next = new;
 }
