@@ -1,3 +1,14 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   atol.c                                             :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: kchibukh <kchibukh@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2026/03/18 17:30:03 by kchibukh          #+#    #+#             */
+/*   Updated: 2026/03/18 17:30:19 by kchibukh         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
 #include "push_swap.h"
 
@@ -24,6 +35,6 @@ int	ft_atol(const char *nptr, t_push_swap_data *data)
 		nptr++;
 	}
 	if (*nptr != '\0')
-		print_error(1, "Is not number\n", data);
+		print_error(2, "Is not number\n", data);
 	return (res * sign);
 }

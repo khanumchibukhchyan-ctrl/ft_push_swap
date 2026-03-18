@@ -6,7 +6,7 @@
 /*   By: kchibukh <kchibukh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/09 16:27:48 by kchibukh          #+#    #+#             */
-/*   Updated: 2026/03/17 21:20:09 by kchibukh         ###   ########.fr       */
+/*   Updated: 2026/03/18 16:54:34 by kchibukh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,7 @@ int	main(int argc, char **argv)
 	init_data(&data);
 	parse_data(argc, argv, &data);
 	print_stack(data.a);
+	free_data(&data);
 	// sort_stack(&data);
 	return (0);
 }

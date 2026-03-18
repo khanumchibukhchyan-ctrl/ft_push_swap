@@ -2,7 +2,7 @@ NAME = push_swap
 
 # Compiler and flags
 CC = cc
-CFLAGS =# -Wall -Wextra -Werror
+CFLAGS = -fsanitize=address # -Wall -Wextra -Werror
 INCLUDES = -I. -I./libft
 
 # Libft

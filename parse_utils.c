@@ -6,7 +6,7 @@
 /*   By: kchibukh <kchibukh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/16 15:40:58 by kchibukh          #+#    #+#             */
-/*   Updated: 2026/03/17 21:21:16 by kchibukh         ###   ########.fr       */
+/*   Updated: 2026/03/18 18:02:45 by kchibukh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,12 @@
 
 void	push_to_stack(char *num, t_push_swap_data *data)
 {
-	lstadd_back(&(data->a), lstnew(ft_atol(num, data)));
+	int	temp;
+	
+	temp = ft_atol(num, data);
+	if (is_num_repeat(temp, data->a))
+		print_error(5, "Duplicates found", data);
+	lstadd_back(&(data->a), lstnew(temp));
 }
 
 void	free_string_array(char **arr)
@@ -24,8 +29,8 @@ void	free_string_array(char **arr)
 	i = -1;
 	if (!arr)
 		return ;
-	while (arr[i])
-		free(arr[i++]);
+	while (arr[++i])
+		free(arr[i]);
 	free(arr);
 }
 
@@ -37,4 +42,16 @@ int	ft_strcmp(const char *s1, const char *s2)
 	while (s1[i] && s2[i] && s1[i] == s2[i])
 		i++;
 	return ((unsigned char)s1[i] - (unsigned char)s2[i]);
+}
+
+bool	is_num_repeat(int num, t_stack* stack)
+{
+	while (stack)
+	{
+		if (num == stack->value)
+			return (true);
+		stack = stack->next;
+		
+	}	
+	return (false);
 }

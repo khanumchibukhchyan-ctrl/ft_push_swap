@@ -6,7 +6,7 @@
 /*   By: kchibukh <kchibukh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/13 20:40:41 by kchibukh          #+#    #+#             */
-/*   Updated: 2026/03/17 21:25:34 by kchibukh         ###   ########.fr       */
+/*   Updated: 2026/03/18 17:25:32 by kchibukh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ void	init_data(t_push_swap_data *data)
 	data->disorder_metric = 0.0f;
 }
 
-// void	sort_stack(t_push_swap_data *data)
+// void	sort_stack(t_push_swap_data *data)   
 // {
 // 	if (data->disorder_metric == 0.0f)
 // 		return ;
@@ -41,7 +41,7 @@ void	init_data(t_push_swap_data *data)
 // 	else
 // 		sort_complex(data);
 // }
-
+  
 void	check_flag(char *argv, t_push_swap_data *data)
 {
 	if (!ft_strcmp(argv, "--bench"))
@@ -55,7 +55,7 @@ void	check_flag(char *argv, t_push_swap_data *data)
 	else if (!ft_strcmp(argv, "--adaptive"))
 		data->strategy = ADAPTIVE;
 	else
-		print_error(1, "Invalid flag provided", data);
+		print_error(3, "Invalid flag provided", data);
 }
 
 void	parse_data(int argc, char **argv, t_push_swap_data *data)
@@ -64,10 +64,9 @@ void	parse_data(int argc, char **argv, t_push_swap_data *data)
 	int		j;
 	char	**temp;
 
-	temp = NULL;
 	i = 0;
 	if (argc < 2)
-		print_error(1, "No arguments provided\n", data);
+		print_error(4, "No arguments provided\n", data);
 	while (++i < argc)
 	{
 		if (argv[i] && argv[i][0] == '-' && argv[i][1] == '-')
