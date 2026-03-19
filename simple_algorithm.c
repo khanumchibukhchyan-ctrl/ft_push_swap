@@ -6,12 +6,12 @@
 /*   By: kchibukh <kchibukh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/15 15:07:12 by kchibukh          #+#    #+#             */
-/*   Updated: 2026/03/15 15:45:08 by kchibukh         ###   ########.fr       */
+/*   Updated: 2026/03/19 21:31:15 by kchibukh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	selection_sort()
+void	selection_sort(t_push_swap_data* data)
 {
 }

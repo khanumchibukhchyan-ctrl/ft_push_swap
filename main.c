@@ -6,33 +6,50 @@
 /*   By: kchibukh <kchibukh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/09 16:27:48 by kchibukh          #+#    #+#             */
-/*   Updated: 2026/03/18 16:54:34 by kchibukh         ###   ########.fr       */
+/*   Updated: 2026/03/19 21:29:27 by kchibukh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-
-void	print_stack(t_stack *stack)
+//TODO: remove after testing
+void print_stack(t_stack *stack)
 {
 	if (!stack)
 		return;
 	while (stack)
 	{
-		ft_putnbr_fd(stack->value, 1);
-		write(1, "\n", 1);
+		printf("Index: %d, Value: %d\n", stack->index, stack->value);
+		// ft_putnbr_fd(stack->value, 1);
+		// write(1, "\n", 1);
 		stack = stack->next;
 	}
 }
 
-int	main(int argc, char **argv)
+void assign_indexes(t_push_swap_data* data)
 {
-	t_push_swap_data	data;
+	int		index;
+	t_stack	*min;
+	
+	index = 0;
+	min = find_min_number_no_index(data->a);
+	while (min)
+	{
+		min->index = index;
+		index++;
+		min = find_min_number_no_index(data->a);
+	}
+}
+
+int main(int argc, char **argv)
+{
+	t_push_swap_data data;
 
 	init_data(&data);
 	parse_data(argc, argv, &data);
+	assign_indexes(&data);
 	print_stack(data.a);
 	free_data(&data);
-	// sort_stack(&data);
+	sort_stack(&data);
 	return (0);
 }
 
@@ -42,6 +59,6 @@ int	main(int argc, char **argv)
 // 	int i = -1;
 // 	while (temp[i++])
 // 		printf("%s\n", temp[i]);
-	
+
 // 	return 0;
 // }

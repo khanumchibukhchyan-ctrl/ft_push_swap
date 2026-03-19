@@ -6,7 +6,7 @@
 /*   By: kchibukh <kchibukh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/13 18:45:51 by kchibukh          #+#    #+#             */
-/*   Updated: 2026/03/17 21:08:40 by kchibukh         ###   ########.fr       */
+/*   Updated: 2026/03/18 19:23:44 by kchibukh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@ t_stack	*lstnew(int value)
 	if (!new)
 		return (NULL);
 	new->value = value;
+	new->index = -1;
 	new->next = NULL;
 	return (new);
 }

@@ -6,7 +6,7 @@
 /*   By: kchibukh <kchibukh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/13 20:40:41 by kchibukh          #+#    #+#             */
-/*   Updated: 2026/03/18 17:25:32 by kchibukh         ###   ########.fr       */
+/*   Updated: 2026/03/19 21:30:35 by kchibukh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,27 +21,28 @@ void	init_data(t_push_swap_data *data)
 	data->disorder_metric = 0.0f;
 }
 
-// void	sort_stack(t_push_swap_data *data)   
-// {
-// 	if (data->disorder_metric == 0.0f)
-// 		return ;
-// 	if (data->strategy == ADAPTIVE)
-// 	{
-// 		if (data->disorder_metric < 0.2)
-// 			data->strategy = SIMPLE;
-// 		else if (data->disorder_metric < 0.5)
-// 			data->strategy = MEDIUM;
-// 		else
-// 			data->strategy = COMPLEX;
-// 	}
-// 	if (data->strategy == SIMPLE)
-// 		sort_simple(data);
+void	sort_stack(t_push_swap_data *data)   
+{
+	if (data->disorder_metric == 0.0f)
+		return ;
+	if (data->strategy == ADAPTIVE)
+	{
+		if (data->disorder_metric < 0.2)
+			data->strategy = SIMPLE;
+		else if (data->disorder_metric < 0.5)
+			data->strategy = MEDIUM;
+		else
+			data->strategy = COMPLEX;
+	}
+	if (data->strategy == SIMPLE)
+		sort_simple(data);
 // 	else if (data->strategy == MEDIUM)
 // 		sort_medium(data);
 // 	else
 // 		sort_complex(data);
 // }
-  
+}
+
 void	check_flag(char *argv, t_push_swap_data *data)
 {
 	if (!ft_strcmp(argv, "--bench"))

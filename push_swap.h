@@ -6,7 +6,7 @@
 /*   By: kchibukh <kchibukh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/09 16:34:27 by kchibukh          #+#    #+#             */
-/*   Updated: 2026/03/18 18:00:38 by kchibukh         ###   ########.fr       */
+/*   Updated: 2026/03/19 20:26:42 by kchibukh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,9 +18,11 @@
 # include <stdbool.h>
 # include <limits.h>
 # include <stdio.h>
+
 typedef struct s_stack
 {
 	int				value;
+	int				index;
 	struct s_stack	*next;
 }	t_stack;
 
@@ -63,6 +65,7 @@ void	parse_data(int argc, char **argv, t_push_swap_data *data);
 void	free_string_array(char **arr);
 bool	is_num_repeat(int num, t_stack* stack);
 int		ft_strcmp(const char *s1, const char *s2);
+t_stack* find_min_number_no_index(t_stack *stack);
 void	push_to_stack(char *num, t_push_swap_data *data);
 int		ft_atol(const char *nptr, t_push_swap_data *data);
 
