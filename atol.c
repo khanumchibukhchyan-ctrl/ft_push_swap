@@ -6,7 +6,7 @@
 /*   By: kchibukh <kchibukh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/18 17:30:03 by kchibukh          #+#    #+#             */
-/*   Updated: 2026/03/18 17:30:19 by kchibukh         ###   ########.fr       */
+/*   Updated: 2026/03/28 13:23:43 by kchibukh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int	ft_atol(const char *nptr, t_push_swap_data *data)
 {
-	int	sign;
+	int		sign;
 	long	res;
 
 	sign = 1;
@@ -27,6 +27,8 @@ int	ft_atol(const char *nptr, t_push_swap_data *data)
 			sign = -1;
 		nptr++;
 	}
+	if (!ft_isdigit(*nptr))
+		print_error(2, "Is not number\n", data);
 	while (ft_isdigit(*nptr))
 	{
 		res = res * 10 + (*nptr - '0');

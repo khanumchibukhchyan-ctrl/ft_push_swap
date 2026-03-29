@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   stack_opertations.c                                :+:      :+:    :+:   */
+/*   stack_operations.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kchibukh <kchibukh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/11 17:12:14 by kchibukh          #+#    #+#             */
-/*   Updated: 2026/03/13 18:46:38 by kchibukh         ###   ########.fr       */
+/*   Updated: 2026/03/28 14:49:25 by kchibukh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,10 @@ void	push(t_stack **stack1, t_stack **stack2, char *msg)
 	temp->next = *stack2;
 	*stack2 = temp;
 	if (msg)
+	{
 		ft_putstr_fd(msg, 1);
+		ft_putstr_fd("\n", 1);
+	}
 }
 
 void	swap(t_stack **stack, char *msg)
@@ -39,7 +42,10 @@ void	swap(t_stack **stack, char *msg)
 	second->next = first;
 	*stack = second;
 	if (msg)
+	{
 		ft_putstr_fd(msg, 1);
+		ft_putstr_fd("\n", 1);
+	}
 }
 
 void	rotate(t_stack **stack, char *msg)
@@ -57,7 +63,10 @@ void	rotate(t_stack **stack, char *msg)
 	current->next = temp;
 	temp->next = NULL;
 	if (msg)
+	{
 		ft_putstr_fd(msg, 1);
+		ft_putstr_fd("\n", 1);
+	}
 }
 
 void	reverse_rotate(t_stack **stack, char *msg)
@@ -75,5 +84,8 @@ void	reverse_rotate(t_stack **stack, char *msg)
 	prelast->next = NULL;
 	*stack = last;
 	if (msg)
+	{
 		ft_putstr_fd(msg, 1);
+		ft_putstr_fd("\n", 1);
+	}
 }

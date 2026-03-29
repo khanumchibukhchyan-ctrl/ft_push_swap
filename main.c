@@ -6,16 +6,16 @@
 /*   By: kchibukh <kchibukh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/09 16:27:48 by kchibukh          #+#    #+#             */
-/*   Updated: 2026/03/19 21:29:27 by kchibukh         ###   ########.fr       */
+/*   Updated: 2026/03/29 13:08:07 by kchibukh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 //TODO: remove after testing
-void print_stack(t_stack *stack)
+void	print_stack(t_stack *stack)
 {
 	if (!stack)
-		return;
+		return ;
 	while (stack)
 	{
 		printf("Index: %d, Value: %d\n", stack->index, stack->value);
@@ -25,11 +25,11 @@ void print_stack(t_stack *stack)
 	}
 }
 
-void assign_indexes(t_push_swap_data* data)
+void	assign_indexes(t_push_swap_data *data)
 {
 	int		index;
 	t_stack	*min;
-	
+
 	index = 0;
 	min = find_min_number_no_index(data->a);
 	while (min)
@@ -40,16 +40,18 @@ void assign_indexes(t_push_swap_data* data)
 	}
 }
 
-int main(int argc, char **argv)
+int	main(int argc, char **argv)
 {
-	t_push_swap_data data;
+	t_push_swap_data	data;
 
 	init_data(&data);
 	parse_data(argc, argv, &data);
+	compute_disorder(&data);
+	choose_strategy(&data);
 	assign_indexes(&data);
+	sort_stack(&data);
 	print_stack(data.a);
 	free_data(&data);
-	sort_stack(&data);
 	return (0);
 }
 

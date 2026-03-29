@@ -15,11 +15,13 @@ SRCS = main.c \
        error.c \
        disorder.c \
        parse_utils.c \
-       stack_opertations.c \
+       stack_operations.c \
        list_operations.c \
        simple_algorithm.c \
        medium_algorithm.c \
        complex_algorithm.c \
+	   sorting_utils.c \
+	   selection_sort_utils.c \
 	   atol.c
 
 # Object files
@@ -37,7 +39,7 @@ $(LIBFT):
 	@echo "$(GREEN)Compiling libft...$(RESET)"
 	@make -C $(LIBFT_DIR)
 
-$(NAME): $(LIBFT) $(OBJS)
+$(NAME): $(LIBFT) $(OBJS) 
 	@echo "$(GREEN)Linking $(NAME)...$(RESET)"
 	@$(CC) $(CFLAGS) $(OBJS) $(LIBFT) -o $(NAME)
 	@echo "$(GREEN)✓ $(NAME) compiled successfully!$(RESET)"

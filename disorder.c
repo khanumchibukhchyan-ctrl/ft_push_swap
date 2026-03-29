@@ -6,7 +6,7 @@
 /*   By: kchibukh <kchibukh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/13 21:24:18 by kchibukh          #+#    #+#             */
-/*   Updated: 2026/03/17 21:04:54 by kchibukh         ###   ########.fr       */
+/*   Updated: 2026/03/28 14:53:42 by kchibukh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,5 +31,5 @@ void	compute_disorder(t_push_swap_data *data)
 	if (total_pairs == 0)
 		data->disorder_metric = 0.0f;
 	else
-		data->disorder_metric = (float)(mistakes / total_pairs);
+		data->disorder_metric = (float)mistakes / (float)total_pairs;
 }

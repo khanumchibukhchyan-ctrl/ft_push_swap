@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main_functions.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kchibukh <kchibukh@student.42.fr>          +#+  +:+       +#+        */
+/*   By: kchibukh <kchibukh@student.42yerevan.am    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/13 20:40:41 by kchibukh          #+#    #+#             */
-/*   Updated: 2026/03/19 21:30:35 by kchibukh         ###   ########.fr       */
+/*   Updated: 2026/03/29 19:05:51 by kchibukh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,10 +21,8 @@ void	init_data(t_push_swap_data *data)
 	data->disorder_metric = 0.0f;
 }
 
-void	sort_stack(t_push_swap_data *data)   
+void	choose_strategy(t_push_swap_data *data)
 {
-	if (data->disorder_metric == 0.0f)
-		return ;
 	if (data->strategy == ADAPTIVE)
 	{
 		if (data->disorder_metric < 0.2)
@@ -34,13 +32,27 @@ void	sort_stack(t_push_swap_data *data)
 		else
 			data->strategy = COMPLEX;
 	}
-	if (data->strategy == SIMPLE)
+}
+
+void	sort_stack(t_push_swap_data *data)
+{
+	int	size;
+
+	if (data->disorder_metric == 0.0f)
+		return ;
+	size = size_of_stack(data->a);
+	if (size <= 1)
+		return ;
+	if (size == 2)
+		sort_two(&data->a);
+	else if (size == 3)
+		sort_three(&data->a);
+	else if (data->strategy == SIMPLE)
 		sort_simple(data);
-// 	else if (data->strategy == MEDIUM)
-// 		sort_medium(data);
-// 	else
-// 		sort_complex(data);
-// }
+	else if (data->strategy == MEDIUM)
+		sort_medium(data);
+	else
+		sort_complex(data);
 }
 
 void	check_flag(char *argv, t_push_swap_data *data)
@@ -73,7 +85,7 @@ void	parse_data(int argc, char **argv, t_push_swap_data *data)
 		if (argv[i] && argv[i][0] == '-' && argv[i][1] == '-')
 		{
 			check_flag(argv[i], data);
-			continue;
+			continue ;
 		}
 		if (argv[i] && ft_strchr(argv[i], ' '))
 		{
@@ -87,5 +99,3 @@ void	parse_data(int argc, char **argv, t_push_swap_data *data)
 			push_to_stack(argv[i], data);
 	}
 }
-
-

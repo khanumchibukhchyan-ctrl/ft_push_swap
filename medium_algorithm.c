@@ -6,12 +6,17 @@
 /*   By: kchibukh <kchibukh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/15 15:07:09 by kchibukh          #+#    #+#             */
-/*   Updated: 2026/03/15 15:45:13 by kchibukh         ###   ########.fr       */
+/*   Updated: 2026/03/26 18:45:21 by kchibukh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	chunk_sort()
+void	sort_medium(t_push_swap_data *data)
+{
+	chunk_sort(&data->a, &data->b);
+}
+
+void	chunk_sort(t_stack **a, t_stack **b)
 {
 }
