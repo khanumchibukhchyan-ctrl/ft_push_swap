@@ -1,36 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*   simple_algorithm.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kchibukh <kchibukh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/01/29 17:28:00 by kchibukh          #+#    #+#             */
-/*   Updated: 2026/03/17 20:47:12 by kchibukh         ###   ########.fr       */
+/*   Created: 2026/03/15 15:07:12 by kchibukh          #+#    #+#             */
+/*   Updated: 2026/03/29 14:15:03 by kchibukh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "push_swap.h"
 
-int	ft_atoi(const char *nptr)
+void	sort_simple(t_push_swap_data *data)
 {
-	int	sign;
-	int	res;
+	selection_sort(&data->a, &data->b);
+}
 
-	sign = 1;
-	res = 0;
-	while (*nptr == ' ' || (*nptr >= 9 && *nptr <= 13))
-		nptr++;
-	if (*nptr == '-' || *nptr == '+')
+void	selection_sort(t_stack **a, t_stack **b)
+{
+	t_stack	*min;
+	int		size;
+
+	size = size_of_stack(*a);
+	while (size > 3)
 	{
-		if (*nptr == '-')
-			sign = -1;
-		nptr++;
+		min = find_minimum(*a);
+		bring_to_top(a, min);
+		push(a, b, "pb");
+		size--;
 	}
-	while (*nptr >= '0' && *nptr <= '9')
-	{
-		res = res * 10 + (*nptr - '0');
-		nptr++;
-	}
-	return (res * sign);
+	sort_three(a);
+	while (*b)
+		push(b, a, "pa");
 }

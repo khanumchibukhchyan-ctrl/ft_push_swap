@@ -1,23 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   complex_algorithm.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kchibukh <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: kchibukh <kchibukh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/01/29 16:38:27 by kchibukh          #+#    #+#             */
-/*   Updated: 2026/02/09 14:53:30 by kchibukh         ###   ########.fr       */
+/*   Created: 2026/03/15 15:07:07 by kchibukh          #+#    #+#             */
+/*   Updated: 2026/03/26 18:44:46 by kchibukh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "push_swap.h"
 
-size_t	ft_strlen(const char *s)
+void	sort_complex(t_push_swap_data *data)
 {
-	size_t	len;
+	radix_sort(&data->a, &data->b);
+}
 
-	len = 0;
-	while (s[len])
-		len++;
-	return (len);
+void	radix_sort(t_stack **a, t_stack **b)
+{
 }

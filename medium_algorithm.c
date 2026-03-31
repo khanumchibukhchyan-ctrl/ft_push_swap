@@ -1,22 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstlast.c                                       :+:      :+:    :+:   */
+/*   medium_algorithm.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kchibukh <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: kchibukh <kchibukh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/02/02 18:47:34 by kchibukh          #+#    #+#             */
-/*   Updated: 2026/02/11 17:21:01 by kchibukh         ###   ########.fr       */
+/*   Created: 2026/03/15 15:07:09 by kchibukh          #+#    #+#             */
+/*   Updated: 2026/03/26 18:45:21 by kchibukh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "push_swap.h"
 
-t_list	*ft_lstlast(t_list *lst)
+void	sort_medium(t_push_swap_data *data)
 {
-	if (!lst)
-		return (NULL);
-	while (lst->next)
-		lst = lst->next;
-	return (lst);
+	chunk_sort(&data->a, &data->b);
+}
+
+void	chunk_sort(t_stack **a, t_stack **b)
+{
 }

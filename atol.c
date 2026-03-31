@@ -1,21 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*   atol.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kchibukh <kchibukh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/01/29 17:28:00 by kchibukh          #+#    #+#             */
-/*   Updated: 2026/03/17 20:47:12 by kchibukh         ###   ########.fr       */
+/*   Created: 2026/03/18 17:30:03 by kchibukh          #+#    #+#             */
+/*   Updated: 2026/03/28 13:23:43 by kchibukh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "push_swap.h"
 
-int	ft_atoi(const char *nptr)
+int	ft_atol(const char *nptr, t_push_swap_data *data)
 {
-	int	sign;
-	int	res;
+	int		sign;
+	long	res;
 
 	sign = 1;
 	res = 0;
@@ -27,10 +27,16 @@ int	ft_atoi(const char *nptr)
 			sign = -1;
 		nptr++;
 	}
-	while (*nptr >= '0' && *nptr <= '9')
+	if (!ft_isdigit(*nptr))
+		print_error(2, "Is not number\n", data);
+	while (ft_isdigit(*nptr))
 	{
 		res = res * 10 + (*nptr - '0');
+		if (res * sign > INT_MAX || res * sign < INT_MIN)
+			print_error(1, "Integer overflow\n", data);
 		nptr++;
 	}
+	if (*nptr != '\0')
+		print_error(2, "Is not number\n", data);
 	return (res * sign);
 }
