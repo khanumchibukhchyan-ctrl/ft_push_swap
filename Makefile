@@ -22,6 +22,7 @@ SRCS = main.c \
        complex_algorithm.c \
 	   sorting_utils.c \
 	   selection_sort_utils.c \
+	   chunk_sort_utils.c \
 	   atol.c
 
 # Object files

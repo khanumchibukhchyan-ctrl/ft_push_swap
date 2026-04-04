@@ -6,7 +6,7 @@
 /*   By: kchibukh <kchibukh@student.42yerevan.am    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/09 16:34:27 by kchibukh          #+#    #+#             */
-/*   Updated: 2026/03/29 18:38:29 by kchibukh         ###   ########.fr       */
+/*   Updated: 2026/04/04 17:03:29 by kchibukh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,10 +55,12 @@ void	push(t_stack **stack1, t_stack **stack2, char *msg);
 
 //Sorting utils
 void	sort_two(t_stack **a);
+int		chunk_size(t_stack *a);
 void	sort_three(t_stack **a);
 t_stack	*find_minimum(t_stack *stack);
 int		size_of_stack(t_stack *stack);
 void	bring_to_top(t_stack **a, t_stack *target);
+void	update_chunk(int min, int max, int size_of_chunk, int size_of_stack);
 
 //Main functions
 void	print_stack(t_stack *stack);
