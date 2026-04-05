@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   parse_utils.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kchibukh <kchibukh@student.42.fr>          +#+  +:+       +#+        */
+/*   By: kchibukh <kchibukh@student.42yerevan.am    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/16 15:40:58 by kchibukh          #+#    #+#             */
-/*   Updated: 2026/03/26 16:53:34 by kchibukh         ###   ########.fr       */
+/*   Updated: 2026/04/04 19:37:41 by kchibukh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ int	ft_strcmp(const char *s1, const char *s2)
 {
 	size_t	i;
 
-	i = 0 ;
+	i = 0;
 	while (s1[i] && s2[i] && s1[i] == s2[i])
 		i++;
 	return ((unsigned char)s1[i] - (unsigned char)s2[i]);

@@ -6,7 +6,7 @@
 /*   By: kchibukh <kchibukh@student.42yerevan.am    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/09 16:34:27 by kchibukh          #+#    #+#             */
-/*   Updated: 2026/04/04 17:03:29 by kchibukh         ###   ########.fr       */
+/*   Updated: 2026/04/05 14:57:35 by kchibukh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,12 +19,21 @@
 # include <limits.h>
 # include <stdio.h>
 
-typedef struct s_stack
+typedef enum e_operations
 {
-	int				value;
-	int				index;
-	struct s_stack	*next;	
-}	t_stack;
+	PUSH_A,
+	PUSH_B,
+	SWAP_A,
+	SWAP_B,
+	SWAP_BOTH,
+	ROTATE_A,
+	ROTATE_B,
+	ROTATE_BOTH,
+	REVERSE_ROTATE_A,
+	REVERSE_ROTATE_B,
+	REVERSE_ROTATE_BOTH,
+	OPERATIONS_COUNT
+}	t_operations;
 
 typedef enum e_strategy
 {
@@ -34,6 +43,13 @@ typedef enum e_strategy
 	COMPLEX,
 }	t_strategy;
 
+typedef struct s_stack
+{
+	int					value;
+	int					index;
+	struct s_stack		*next;	
+}	t_stack;
+
 typedef struct s_push_swap_data
 {
 	t_stack		*a;
@@ -41,6 +57,7 @@ typedef struct s_push_swap_data
 	t_strategy	strategy;
 	bool		is_benchmark;
 	float		disorder_metric;
+	int			operations_count[OPERATIONS_COUNT];
 }	t_push_swap_data;
 
 //List functions
@@ -59,8 +76,12 @@ int		chunk_size(t_stack *a);
 void	sort_three(t_stack **a);
 t_stack	*find_minimum(t_stack *stack);
 int		size_of_stack(t_stack *stack);
+int		find_max_index(t_stack *stack);
+int		find_position(t_stack *stack, int index);
+void	push_back_sorted(t_stack **b, t_stack **a);
 void	bring_to_top(t_stack **a, t_stack *target);
-void	update_chunk(int min, int max, int size_of_chunk, int size_of_stack);
+int		count_in_range(t_stack *a, int min, int max);
+void	update_chunk(int *min, int *max, int size_of_chunk, int size_of_stack);
 
 //Main functions
 void	print_stack(t_stack *stack);
