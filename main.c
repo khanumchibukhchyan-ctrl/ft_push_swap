@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kchibukh <kchibukh@student.42.fr>          +#+  +:+       +#+        */
+/*   By: kchibukh <kchibukh@student.42yerevan.am    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/09 16:27:48 by kchibukh          #+#    #+#             */
-/*   Updated: 2026/03/29 13:08:07 by kchibukh         ###   ########.fr       */
+/*   Updated: 2026/04/05 19:45:46 by kchibukh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,6 @@ void	print_stack(t_stack *stack)
 	while (stack)
 	{
 		printf("Index: %d, Value: %d\n", stack->index, stack->value);
-		// ft_putnbr_fd(stack->value, 1);
-		// write(1, "\n", 1);
 		stack = stack->next;
 	}
 }
@@ -35,6 +33,7 @@ void	assign_indexes(t_push_swap_data *data)
 	while (min)
 	{
 		min->index = index;
+		min->data = data;
 		index++;
 		min = find_min_number_no_index(data->a);
 	}
@@ -50,17 +49,9 @@ int	main(int argc, char **argv)
 	choose_strategy(&data);
 	assign_indexes(&data);
 	sort_stack(&data);
-	print_stack(data.a);
+	if (data.is_benchmark)
+		print_benchmark_data(&data);
+	// print_stack(data.a);
 	free_data(&data);
 	return (0);
 }
-
-// int main(int argc, char const *argv[])
-// {
-// 	char **temp = ft_split("  556 4 56 7 54     56 77 8", ' ');
-// 	int i = -1;
-// 	while (temp[i++])
-// 		printf("%s\n", temp[i]);
-
-// 	return 0;
-// }

@@ -6,7 +6,7 @@
 /*   By: kchibukh <kchibukh@student.42yerevan.am    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/09 16:34:27 by kchibukh          #+#    #+#             */
-/*   Updated: 2026/04/05 14:57:35 by kchibukh         ###   ########.fr       */
+/*   Updated: 2026/04/05 19:33:40 by kchibukh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,11 +43,14 @@ typedef enum e_strategy
 	COMPLEX,
 }	t_strategy;
 
+typedef struct s_push_swap_data	t_push_swap_data;
+
 typedef struct s_stack
 {
 	int					value;
 	int					index;
-	struct s_stack		*next;	
+	struct s_stack		*next;
+	t_push_swap_data	*data;
 }	t_stack;
 
 typedef struct s_push_swap_data
@@ -116,5 +119,16 @@ void	chunk_sort(t_stack	**a, t_stack **b);
 //Complex sort
 void	sort_complex(t_push_swap_data *data);
 void	radix_sort(t_stack	**a, t_stack **b);
+
+//Benchmark
+int		get_operation_type(char *operation);
+void	print_benchmark_data(t_push_swap_data *data);
+void	print_disorder(t_push_swap_data *data);
+void	print_strategy(t_push_swap_data *data);
+void	print_total_ops(t_push_swap_data *data);
+void	print_operations_line1(t_push_swap_data *data);
+void	print_operations_line2(t_push_swap_data *data);
+void	print_rotations_line1(t_push_swap_data *data);
+void	print_rotations_line2(t_push_swap_data *data);
 
 #endif

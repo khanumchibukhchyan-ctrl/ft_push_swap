@@ -6,7 +6,7 @@
 /*   By: kchibukh <kchibukh@student.42yerevan.am    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/04 19:35:48 by kchibukh          #+#    #+#             */
-/*   Updated: 2026/04/05 14:25:46 by kchibukh         ###   ########.fr       */
+/*   Updated: 2026/04/05 19:44:28 by kchibukh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,16 +39,50 @@ int	get_operation_type(char *operation)
 	return (-1);
 }
 
-int	total_operations(t_push_swap_data *data)
+void	print_rotations_line1(t_push_swap_data *data)
 {
-	int	i;
-	int	total;
+	char	*num_str;
 
-	i = 0;
-	total = 0;
-	while (i < OPERATIONS_COUNT)
-	{
-		total += data->operations_count[i++];
-	}
-	return (total);
+	ft_putstr_fd("[bench] ra: ", 2);
+	num_str = ft_itoa(data->operations_count[ROTATE_A]);
+	ft_putstr_fd(num_str, 2);
+	free(num_str);
+	ft_putstr_fd("  rb: ", 2);
+	num_str = ft_itoa(data->operations_count[ROTATE_B]);
+	ft_putstr_fd(num_str, 2);
+	free(num_str);
+	ft_putstr_fd("  rr: ", 2);
+	num_str = ft_itoa(data->operations_count[ROTATE_BOTH]);
+	ft_putstr_fd(num_str, 2);
+	free(num_str);
+}
+
+void	print_rotations_line2(t_push_swap_data *data)
+{
+	char	*num_str;
+
+	ft_putstr_fd("  rra: ", 2);
+	num_str = ft_itoa(data->operations_count[REVERSE_ROTATE_A]);
+	ft_putstr_fd(num_str, 2);
+	free(num_str);
+	ft_putstr_fd("  rrb: ", 2);
+	num_str = ft_itoa(data->operations_count[REVERSE_ROTATE_B]);
+	ft_putstr_fd(num_str, 2);
+	free(num_str);
+	ft_putstr_fd("  rrr: ", 2);
+	num_str = ft_itoa(data->operations_count[REVERSE_ROTATE_BOTH]);
+	ft_putstr_fd(num_str, 2);
+	free(num_str);
+	ft_putchar_fd('\n', 2);
+}
+
+void	print_benchmark_data(t_push_swap_data *data)
+{
+	print_disorder(data);
+	print_strategy(data);
+	print_total_ops(data);
+	print_operations_line1(data);
+	print_operations_line2(data);
+	print_rotations_line1(data);
+	print_rotations_line2(data);
 }

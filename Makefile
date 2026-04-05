@@ -25,7 +25,7 @@ SRCS = main.c \
 	   chunk_sort_utils.c \
 	   atol.c \
 	   benchmark.c \
-	   benchmark_utils.c \
+	   benchmark_utils.c
 
 # Object files
 OBJS = $(SRCS:.c=.o)
