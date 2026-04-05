@@ -6,7 +6,7 @@
 /*   By: kchibukh <kchibukh@student.42yerevan.am    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/13 20:40:41 by kchibukh          #+#    #+#             */
-/*   Updated: 2026/03/29 19:05:51 by kchibukh         ###   ########.fr       */
+/*   Updated: 2026/04/04 19:47:53 by kchibukh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@ void	init_data(t_push_swap_data *data)
 	data->strategy = ADAPTIVE;
 	data->is_benchmark = false;
 	data->disorder_metric = 0.0f;
+	ft_memset(data->operations_count, 0, sizeof(int) * OPERATIONS_COUNT);
 }
 
 void	choose_strategy(t_push_swap_data *data)

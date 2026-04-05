@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   error.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kchibukh <kchibukh@student.42.fr>          +#+  +:+       +#+        */
+/*   By: kchibukh <kchibukh@student.42yerevan.am    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/14 19:50:21 by kchibukh          #+#    #+#             */
-/*   Updated: 2026/03/18 17:29:15 by kchibukh         ###   ########.fr       */
+/*   Updated: 2026/04/05 19:44:28 by kchibukh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ void	print_error(int error, char *msg, t_push_swap_data *data)
 {
 	ft_putstr_fd("Error\n", 2);
 	if (msg)
-		ft_putstr_fd(msg, 1);
+		ft_putstr_fd(msg, 2);
 	free_data(data);
 	exit(error);
 }

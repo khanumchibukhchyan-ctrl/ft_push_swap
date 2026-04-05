@@ -22,7 +22,10 @@ SRCS = main.c \
        complex_algorithm.c \
 	   sorting_utils.c \
 	   selection_sort_utils.c \
-	   atol.c
+	   chunk_sort_utils.c \
+	   atol.c \
+	   benchmark.c \
+	   benchmark_utils.c
 
 # Object files
 OBJS = $(SRCS:.c=.o)

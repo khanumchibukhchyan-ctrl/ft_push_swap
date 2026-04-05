@@ -24,6 +24,8 @@ void	push(t_stack **stack1, t_stack **stack2, char *msg)
 	*stack2 = temp;
 	if (msg)
 	{
+		if (temp->data && temp->data->is_benchmark)
+			temp->data->operations_count[get_operation_type(msg)]++;
 		ft_putstr_fd(msg, 1);
 		ft_putstr_fd("\n", 1);
 	}
@@ -43,6 +45,8 @@ void	swap(t_stack **stack, char *msg)
 	*stack = second;
 	if (msg)
 	{
+		if ((*stack)->data && (*stack)->data->is_benchmark)
+			(*stack)->data->operations_count[get_operation_type(msg)]++;
 		ft_putstr_fd(msg, 1);
 		ft_putstr_fd("\n", 1);
 	}
@@ -64,6 +68,8 @@ void	rotate(t_stack **stack, char *msg)
 	temp->next = NULL;
 	if (msg)
 	{
+		if ((*stack)->data && (*stack)->data->is_benchmark)
+			(*stack)->data->operations_count[get_operation_type(msg)]++;
 		ft_putstr_fd(msg, 1);
 		ft_putstr_fd("\n", 1);
 	}
@@ -85,6 +91,8 @@ void	reverse_rotate(t_stack **stack, char *msg)
 	*stack = last;
 	if (msg)
 	{
+		if ((*stack)->data && (*stack)->data->is_benchmark)
+			(*stack)->data->operations_count[get_operation_type(msg)]++;
 		ft_putstr_fd(msg, 1);
 		ft_putstr_fd("\n", 1);
 	}
