@@ -6,11 +6,16 @@
 /*   By: kchibukh <kchibukh@student.42yerevan.am    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/15 15:07:07 by kchibukh          #+#    #+#             */
-/*   Updated: 2026/04/05 19:36:35 by kchibukh         ###   ########.fr       */
+/*   Updated: 2026/04/06 16:00:49 by kchibukh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+
+void	sort_complex(t_push_swap_data *data)
+{
+	radix_sort(&data->a, &data->b);
+}
 
 int	get_max_bits(t_stack *a)
 {
@@ -57,9 +62,4 @@ void	radix_sort(t_stack **a, t_stack **b)
 			push(b, a, "pa");
 		i++;
 	}
-}
-
-void	sort_complex(t_push_swap_data *data)
-{
-	radix_sort(&data->a, &data->b);
 }

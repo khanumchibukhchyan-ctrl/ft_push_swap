@@ -6,7 +6,7 @@
 /*   By: kchibukh <kchibukh@student.42yerevan.am    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/09 16:34:27 by kchibukh          #+#    #+#             */
-/*   Updated: 2026/04/05 19:33:40 by kchibukh         ###   ########.fr       */
+/*   Updated: 2026/04/06 17:51:42 by kchibukh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,6 +59,7 @@ typedef struct s_push_swap_data
 	t_stack		*b;
 	t_strategy	strategy;
 	bool		is_benchmark;
+	bool		is_adaptive;
 	float		disorder_metric;
 	int			operations_count[OPERATIONS_COUNT];
 }	t_push_swap_data;

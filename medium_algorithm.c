@@ -6,7 +6,7 @@
 /*   By: kchibukh <kchibukh@student.42yerevan.am    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/15 15:07:09 by kchibukh          #+#    #+#             */
-/*   Updated: 2026/04/05 19:04:44 by kchibukh         ###   ########.fr       */
+/*   Updated: 2026/04/06 14:31:01 by kchibukh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,7 +56,7 @@ void	chunk_sort(t_stack **a, t_stack **b)
 	while (*a)
 	{
 		if (count_in_range(*a, min, max) == 0)
-				update_chunk(&min, &max, size_of_chunk, size);
+			update_chunk(&min, &max, size_of_chunk, size);
 		if ((*a)->index >= min && (*a)->index <= max)
 		{
 			push(a, b, "pb");

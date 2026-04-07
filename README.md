@@ -20,7 +20,7 @@ The program outputs a sequence of operations to sort stack `a` in ascending orde
   - `--simple` — Forces the use of your O(n²) algorithm.
   - `--medium` — Forces the use of your O(n√n) algorithm.
   - `--complex` — Forces the use of your O(n log n) algorithm.
-  - `--adaptive` — Uses an adaptive algorithm based on disorder. This is the default behavio
+  - `--adaptive` — Uses an adaptive algorithm based on disorder. This is the default behavior
 - Generate a valid sequence of Push_swap operations (`sa`, `sb`, `ss`, `pa`, `pb`, `ra`, `rb`, `rr`, `rra`, `rrb`, `rrr`) to sort the stack efficiently.  
 
 ---

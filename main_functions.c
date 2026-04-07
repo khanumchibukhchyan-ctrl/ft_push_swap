@@ -6,7 +6,7 @@
 /*   By: kchibukh <kchibukh@student.42yerevan.am    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/13 20:40:41 by kchibukh          #+#    #+#             */
-/*   Updated: 2026/04/04 19:47:53 by kchibukh         ###   ########.fr       */
+/*   Updated: 2026/04/07 17:35:07 by kchibukh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,7 @@ void	choose_strategy(t_push_swap_data *data)
 {
 	if (data->strategy == ADAPTIVE)
 	{
+		data->is_adaptive = true;
 		if (data->disorder_metric < 0.2)
 			data->strategy = SIMPLE;
 		else if (data->disorder_metric < 0.5)

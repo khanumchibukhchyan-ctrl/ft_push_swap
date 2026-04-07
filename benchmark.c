@@ -6,7 +6,7 @@
 /*   By: kchibukh <kchibukh@student.42yerevan.am    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/05 19:18:32 by kchibukh          #+#    #+#             */
-/*   Updated: 2026/04/05 19:44:28 by kchibukh         ###   ########.fr       */
+/*   Updated: 2026/04/06 21:21:23 by kchibukh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,14 +37,21 @@ void	print_disorder(t_push_swap_data *data)
 void	print_strategy(t_push_swap_data *data)
 {
 	ft_putstr_fd("[bench] strategy: ", 2);
-	if (data->strategy == SIMPLE)
+	if (data->is_adaptive == true)
+	{
+		if (data->strategy == SIMPLE)
+			ft_putstr_fd("Adaptive / O(n²)\n", 2);
+		else if (data->strategy == MEDIUM)
+			ft_putstr_fd("Adaptive / O(n√n)\n", 2);
+		else if (data->strategy == COMPLEX)
+			ft_putstr_fd("Adaptive / O(n·log n)\n", 2);
+	}
+	else if (data->strategy == SIMPLE)
 		ft_putstr_fd("Simple / O(n²)\n", 2);
 	else if (data->strategy == MEDIUM)
 		ft_putstr_fd("Medium / O(n√n)\n", 2);
 	else if (data->strategy == COMPLEX)
 		ft_putstr_fd("Complex / O(n·log n)\n", 2);
-	else
-		ft_putstr_fd("Unknown\n", 2);
 }
 
 void	print_total_ops(t_push_swap_data *data)
