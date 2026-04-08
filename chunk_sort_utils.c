@@ -6,7 +6,7 @@
 /*   By: kchibukh <kchibukh@student.42yerevan.am    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/04 15:07:02 by kchibukh          #+#    #+#             */
-/*   Updated: 2026/04/05 15:07:46 by kchibukh         ###   ########.fr       */
+/*   Updated: 2026/04/08 17:02:26 by kchibukh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,11 +20,8 @@ int	chunk_size(t_stack *a)
 
 	size = size_of_stack(a);
 	chunk_count = 0;
-	while (size > 1)
-	{
-		size = size / 2;
+	while (chunk_count * chunk_count <= size)
 		chunk_count++;
-	}
 	size = size_of_stack(a);
 	chunk_size = size / chunk_count;
 	return (chunk_size);

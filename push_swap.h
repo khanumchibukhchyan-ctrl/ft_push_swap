@@ -6,7 +6,7 @@
 /*   By: kchibukh <kchibukh@student.42yerevan.am    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/09 16:34:27 by kchibukh          #+#    #+#             */
-/*   Updated: 2026/04/06 17:51:42 by kchibukh         ###   ########.fr       */
+/*   Updated: 2026/04/08 17:43:05 by kchibukh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,7 @@ typedef enum e_operations
 
 typedef enum e_strategy
 {
+	NONE,
 	ADAPTIVE,
 	SIMPLE,
 	MEDIUM,

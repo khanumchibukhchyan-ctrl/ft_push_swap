@@ -6,7 +6,7 @@
 /*   By: kchibukh <kchibukh@student.42yerevan.am    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/13 20:40:41 by kchibukh          #+#    #+#             */
-/*   Updated: 2026/04/07 17:35:07 by kchibukh         ###   ########.fr       */
+/*   Updated: 2026/04/08 18:44:35 by kchibukh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ void	init_data(t_push_swap_data *data)
 {
 	data->a = NULL;
 	data->b = NULL;
-	data->strategy = ADAPTIVE;
+	data->strategy = NONE;
 	data->is_benchmark = false;
 	data->disorder_metric = 0.0f;
 	ft_memset(data->operations_count, 0, sizeof(int) * OPERATIONS_COUNT);
@@ -61,14 +61,20 @@ void	check_flag(char *argv, t_push_swap_data *data)
 {
 	if (!ft_strcmp(argv, "--bench"))
 		data->is_benchmark = true;
-	else if (!ft_strcmp(argv, "--simple"))
-		data->strategy = SIMPLE;
-	else if (!ft_strcmp(argv, "--medium"))
-		data->strategy = MEDIUM;
-	else if (!ft_strcmp(argv, "--complex"))
-		data->strategy = COMPLEX;
-	else if (!ft_strcmp(argv, "--adaptive"))
-		data->strategy = ADAPTIVE;
+	else if (!ft_strcmp(argv, "--simple") || !ft_strcmp(argv, "--medium")
+		|| !ft_strcmp(argv, "--complex") || !ft_strcmp(argv, "--adaptive"))
+	{
+		if (data->strategy != NONE)
+			print_error(3, "Multiple strategy flags provided", data);
+		if (!ft_strcmp(argv, "--simple"))
+			data->strategy = SIMPLE;
+		else if (!ft_strcmp(argv, "--medium"))
+			data->strategy = MEDIUM;
+		else if (!ft_strcmp(argv, "--complex"))
+			data->strategy = COMPLEX;
+		else if (!ft_strcmp(argv, "--adaptive"))
+			data->strategy = ADAPTIVE;
+	}
 	else
 		print_error(3, "Invalid flag provided", data);
 }

@@ -6,7 +6,7 @@
 /*   By: kchibukh <kchibukh@student.42yerevan.am    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/09 16:27:48 by kchibukh          #+#    #+#             */
-/*   Updated: 2026/04/06 17:33:29 by kchibukh         ###   ########.fr       */
+/*   Updated: 2026/04/08 18:00:20 by kchibukh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,6 +45,8 @@ int	main(int argc, char **argv)
 
 	init_data(&data);
 	parse_data(argc, argv, &data);
+	if (data.strategy == NONE)
+		data.strategy = ADAPTIVE;
 	compute_disorder(&data);
 	choose_strategy(&data);
 	assign_indexes(&data);
