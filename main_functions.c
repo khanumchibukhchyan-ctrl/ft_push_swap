@@ -6,7 +6,7 @@
 /*   By: kchibukh <kchibukh@student.42yerevan.am    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/13 20:40:41 by kchibukh          #+#    #+#             */
-/*   Updated: 2026/04/08 18:44:35 by kchibukh         ###   ########.fr       */
+/*   Updated: 2026/04/08 20:20:07 by kchibukh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -87,7 +87,7 @@ void	parse_data(int argc, char **argv, t_push_swap_data *data)
 
 	i = 0;
 	if (argc < 2)
-		print_error(4, "No arguments provided\n", data);
+		exit(0);
 	while (++i < argc)
 	{
 		if (argv[i] && argv[i][0] == '-' && argv[i][1] == '-')
