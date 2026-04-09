@@ -27,6 +27,4 @@ void	execute_instruction(char *line, t_stack **a, t_stack **b)
 		rrb(b);
 	else if (op == REVERSE_ROTATE_BOTH)
 		rrr(a, b);
-	else
-		error_exit(a, b);
 }

@@ -13,6 +13,11 @@ void	read_and_execute(t_stack **a, t_stack **b)
         free(line);
         error_exit(a, b);
       }
+      if (get_operation_type(line) == -1)
+      {
+        free(line);
+        error_exit(a, b);
+      }
     execute_instruction(line, a, b);
 		free(line);
 	}

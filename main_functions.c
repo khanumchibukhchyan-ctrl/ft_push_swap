@@ -6,7 +6,7 @@
 /*   By: kchibukh <kchibukh@student.42yerevan.am    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/13 20:40:41 by kchibukh          #+#    #+#             */
-/*   Updated: 2026/04/08 20:20:07 by kchibukh         ###   ########.fr       */
+/*   Updated: 2026/04/09 19:49:23 by kchibukh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,6 +49,8 @@ void	sort_stack(t_push_swap_data *data)
 		sort_two(&data->a);
 	else if (size == 3)
 		sort_three(&data->a);
+	else if (size <= 5)
+		sort_five(data);
 	else if (data->strategy == SIMPLE)
 		sort_simple(data);
 	else if (data->strategy == MEDIUM)

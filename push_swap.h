@@ -6,7 +6,7 @@
 /*   By: kchibukh <kchibukh@student.42yerevan.am    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/09 16:34:27 by kchibukh          #+#    #+#             */
-/*   Updated: 2026/04/08 17:43:05 by kchibukh         ###   ########.fr       */
+/*   Updated: 2026/04/09 19:20:10 by kchibukh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -87,6 +87,7 @@ void	push_back_sorted(t_stack **b, t_stack **a);
 void	bring_to_top(t_stack **a, t_stack *target);
 int		count_in_range(t_stack *a, int min, int max);
 void	update_chunk(int *min, int *max, int size_of_chunk, int size_of_stack);
+void	sort_five(t_push_swap_data *data);
 
 //Main functions
 void	print_stack(t_stack *stack);
