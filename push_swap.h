@@ -6,7 +6,7 @@
 /*   By: kchibukh <kchibukh@student.42yerevan.am    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/09 16:34:27 by kchibukh          #+#    #+#             */
-/*   Updated: 2026/04/09 19:20:10 by kchibukh         ###   ########.fr       */
+/*   Updated: 2026/04/10 20:01:46 by kchibukh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -133,5 +133,14 @@ void	print_operations_line1(t_push_swap_data *data);
 void	print_operations_line2(t_push_swap_data *data);
 void	print_rotations_line1(t_push_swap_data *data);
 void	print_rotations_line2(t_push_swap_data *data);
+
+//Bonus
+int		is_sorted(t_stack *a);
+void	error_exit(t_stack **a, t_stack **b);
+void	ss(t_stack **a, t_stack **b, char *msg);
+void	rr(t_stack **a, t_stack **b, char *msg);
+void	rrr(t_stack **a, t_stack **b, char *msg);
+void	read_and_execute(t_stack **a, t_stack **b);
+void	execute_instruction(char *line, t_stack **a, t_stack **b);
 
 #endif

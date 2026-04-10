@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   execute.c                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: kchibukh <kchibukh@student.42yerevan.am    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2026/04/10 17:52:01 by kchibukh          #+#    #+#             */
+/*   Updated: 2026/04/10 20:22:57 by kchibukh         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "push_swap.h"
 
 void	execute_instruction(char *line, t_stack **a, t_stack **b)
@@ -6,25 +18,25 @@ void	execute_instruction(char *line, t_stack **a, t_stack **b)
 
 	op = get_operation_type(line);
 	if (op == PUSH_A)
-		pa(a, b);
+		push(a, b, NULL);
 	else if (op == PUSH_B)
-		pb(a, b);
+		push(b, a, NULL);
 	else if (op == SWAP_A)
-		sa(a);
+		swap(a, NULL);
 	else if (op == SWAP_B)
-		sb(b);
+		swap(b, NULL);
 	else if (op == SWAP_BOTH)
-		ss(a, b);
+		ss(a, b, NULL);
 	else if (op == ROTATE_A)
-		ra(a);
+		rotate(a, NULL);
 	else if (op == ROTATE_B)
-		rb(b);
+		rotate(b, NULL);
 	else if (op == ROTATE_BOTH)
-		rr(a, b);
+		rr(a, b, NULL);
 	else if (op == REVERSE_ROTATE_A)
-		rra(a);
+		reverse_rotate(a, NULL);
 	else if (op == REVERSE_ROTATE_B)
-		rrb(b);
+		reverse_rotate(b, NULL);
 	else if (op == REVERSE_ROTATE_BOTH)
-		rrr(a, b);
+		rrr(a, b, NULL);
 }

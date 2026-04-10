@@ -1,33 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   checker.c                                          :+:      :+:    :+:   */
+/*   get_next_line_utils.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kchibukh <kchibukh@student.42yerevan.am    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/04/10 17:51:33 by kchibukh          #+#    #+#             */
-/*   Updated: 2026/04/10 18:17:34 by kchibukh         ###   ########.fr       */
+/*   Created: 2026/02/28 17:37:45 by kchibukh          #+#    #+#             */
+/*   Updated: 2026/04/10 20:17:11 by kchibukh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "get_next_line.h"
 
-int	main(int argc, char **argv)
+char	*ft_strjoin(const char *l1, const char *l2)
 {
-	t_stack		*a;
-	t_stack		*b;
+	char	*new;
+	size_t	i;
+	size_t	j;
 
-	if (argc < 2)
-		return (0);
-	a = NULL;
-	b = NULL;
-	parse_data(argc, argv, &a);
-	read_and_execute(&a, &b);
-	if (is_sorted(a) && b == NULL)
-		write (1, "OK\n", 3);
-	else
-		write (1, "KO\n", 3);
-	free_stack(&a);
-	free_stack(&b);
-	return (0);
+	if (!l1 || !l2)
+		return (NULL);
+	i = 0;
+	j = 0;
+	new = (char *)malloc(ft_strlen(l1) + ft_strlen(l2) + 1);
+	if (!new)
+		return (NULL);
+	while (l1[i] != '\0')
+	{
+		new[i] = l1[i];
+		i++;
+	}
+	while (l2[j] != '\0')
+	{
+		new[i + j] = l2[j];
+		j++;
+	}
+	new[i + j] = '\0';
+	return (new);
 }
