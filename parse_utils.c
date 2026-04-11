@@ -6,7 +6,7 @@
 /*   By: kchibukh <kchibukh@student.42yerevan.am    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/16 15:40:58 by kchibukh          #+#    #+#             */
-/*   Updated: 2026/04/07 18:07:07 by kchibukh         ###   ########.fr       */
+/*   Updated: 2026/04/11 13:49:42 by kchibukh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ void	push_to_stack(char *num, t_push_swap_data *data)
 
 	temp = ft_atol(num, data);
 	if (is_num_repeat(temp, data->a))
-		print_error(5, "Duplicates found", data);
+		print_error(5, "Duplicates found\n", data);
 	lstadd_back(&(data->a), lstnew(temp));
 }
 

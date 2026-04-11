@@ -6,22 +6,11 @@
 /*   By: kchibukh <kchibukh@student.42yerevan.am    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/09 16:27:48 by kchibukh          #+#    #+#             */
-/*   Updated: 2026/04/09 20:28:39 by kchibukh         ###   ########.fr       */
+/*   Updated: 2026/04/11 15:36:24 by kchibukh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-//TODO: remove after testing
-void	print_stack(t_stack *stack)
-{
-	if (!stack)
-		return ;
-	while (stack)
-	{
-		printf("Index: %d, Value: %d\n", stack->index, stack->value);
-		stack = stack->next;
-	}
-}
 
 void	assign_indexes(t_push_swap_data *data)
 {
@@ -53,7 +42,6 @@ int	main(int argc, char **argv)
 	sort_stack(&data);
 	if (data.is_benchmark)
 		print_benchmark_data(&data);
-	// print_stack(data.a);
 	free_data(&data);
 	return (0);
 }

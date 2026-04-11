@@ -6,7 +6,7 @@
 /*   By: kchibukh <kchibukh@student.42yerevan.am    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/13 20:40:41 by kchibukh          #+#    #+#             */
-/*   Updated: 2026/04/09 19:49:23 by kchibukh         ###   ########.fr       */
+/*   Updated: 2026/04/11 13:50:13 by kchibukh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,7 +67,7 @@ void	check_flag(char *argv, t_push_swap_data *data)
 		|| !ft_strcmp(argv, "--complex") || !ft_strcmp(argv, "--adaptive"))
 	{
 		if (data->strategy != NONE)
-			print_error(3, "Multiple strategy flags provided", data);
+			print_error(3, "Multiple strategy flags provided\n", data);
 		if (!ft_strcmp(argv, "--simple"))
 			data->strategy = SIMPLE;
 		else if (!ft_strcmp(argv, "--medium"))
@@ -78,7 +78,7 @@ void	check_flag(char *argv, t_push_swap_data *data)
 			data->strategy = ADAPTIVE;
 	}
 	else
-		print_error(3, "Invalid flag provided", data);
+		print_error(3, "Invalid flag provided\n", data);
 }
 
 void	parse_data(int argc, char **argv, t_push_swap_data *data)
